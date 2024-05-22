@@ -1,0 +1,41 @@
+
+ <!-- <div class="main-content container">
+  <div class="col-md-12 px-md-4 main-content-inn m-3">
+    <div class="users-row row">
+      @for (users of dataCollection; track $index) {
+      <div
+        class="user-card col-md-3 m-3 img" >
+        <img [src]="users.IMG_URL" height="200" width="200" 
+       />
+        <h6>Name : {{ users?.PRODUCT | titlecase }}</h6>
+        <h5>{{ users?.MRP |currency:'INR' }}</h5>
+        <p>Category:{{ users?.SUB_CAT_ID }}</p>
+        <p>{{ users?.DESCRIPTION }}</p>
+        <div>
+          Category : {{users?.CATEGORY_NAME}}
+        </div>
+        {{users |json}}
+        <button type="button"  [routerLink]="['/details/',users?.PROD_ID]" class="btn btn-primary">Primary</button>
+      </div>
+    }
+    </div>
+  </div>
+</div>  -->
+<nav class="navbar navbar-expand-lg bg-body-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page"><img src="../assets/clearcart.jpg" width="30px" height="30px" (click)="clearCart()"/></a>
+        <a type="button" [routerLink]="'/details'"><img src="../assets/cart.png" width="40px" height="40px" /><span style="text-decoration:none;color:  blue;">({{datalength?.length }})</span></a>
+      </div>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+<!-- <button type="button" class="btn btn-primary">Primary</button> -->
+

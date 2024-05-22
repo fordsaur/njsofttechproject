@@ -1,0 +1,25 @@
+
+    
+        <div class="container" *ngIf="fname!=null">
+        <title>Product Details</title>
+        <div class="product-details" *ngFor="let cartItem of fname">
+            <div class="product-image" >
+                <img [src]="cartItem?.IMG_URL" alt="Product Image">
+            </div>
+            <div class="product-info">
+                <h1 class="product-title">{{cartItem?.PRODUCT}}</h1>
+                <p class="product-description">
+                    {{cartItem?.DESCRIPTION}}
+                </p>
+                <p class="product-price">MRP : {{cartItem?.MRP}}</p>
+                <div class="product-meta">
+                    <span class="product-category">Category: {{cartItem?.CATEGORY}}</span>
+                    <span class="product-sku">Sub-Category: {{cartItem?.SUB_CATEGORY_NAME}}</span>
+                    <button type="button" class="btn btn-success" (click)="deleteCart(cartItem.PROD_ID)"> Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  <div *ngIf="fname==null" class="no-data-div">No Data is present</div>
+
+
